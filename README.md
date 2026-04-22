@@ -25,3 +25,7 @@ Update the path in `main.py` and run:
 ```bash
 python main.py
 ```
+
+## Published Article
+Friday, Ibanga Kpereobong, Sarada Prasanna Pati, and Debahuti Mishra. "A multi-modal approach using a hybrid vision transformer and temporal fusion transformer model for stock price movement classification." IEEE Access (2025). Vol. 13, pp. 127221-127239, 2025, doi: 10.1109/ACCESS.2025.3589063. 
+https://ieeexplore.ieee.org/document/11080418/
