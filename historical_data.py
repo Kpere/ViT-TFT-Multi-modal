@@ -32,7 +32,7 @@ def load_and_preprocess_data(file_path):
     """
     Loads data from CSV, sets DateTime index, and adds indicators.
     """
-    print(f"✅ Loading data from: {file_path}")
+    print(f"Loading data from: {file_path}")
     df = pd.read_csv(file_path)
     if 'Date' in df.columns:
         df['Date'] = pd.to_datetime(df['Date'])
