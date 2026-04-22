@@ -7,7 +7,7 @@ def extract_candlestick_features(image_paths):
     Extracts manual Computer Vision features (HOG, Color histograms, and edge contours)
     from the generated candlestick charts.
     """
-    print("✅ Extracting Hand-crafted Candlestick Features (HOG & Contours)...")
+    print("Extracting Hand-crafted Candlestick Features (HOG & Contours)...")
     candlestick_features = []
     
     for path in image_paths:
@@ -51,6 +51,6 @@ def extract_candlestick_features(image_paths):
         candlestick_features.append(feature_vec)
         
     candlestick_features = np.array(candlestick_features)
-    print(f"✅ Candlestick engineered shape: {candlestick_features.shape}")
+    print(f"Candlestick engineered shape: {candlestick_features.shape}")
     
     return candlestick_features
