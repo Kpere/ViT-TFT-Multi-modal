@@ -7,7 +7,7 @@ def extract_vit_features(image_paths):
     """
     Extracts deep visual embeddings using a pretrained Vision Transformer.
     """
-    print("✅ Extracting Deep ViT Tokens...")
+    print("Extracting ViT Tokens...")
     
     # Load Pretrained ViT base
     vit_model = timm.create_model('vit_base_patch16_224', pretrained=True)
@@ -27,6 +27,6 @@ def extract_vit_features(image_paths):
         visual_tokens.append(vit_features)
         
     visual_tokens = np.array(visual_tokens)
-    print(f"✅ ViT token shape: {visual_tokens.shape}")
+    print(f"ViT token shape: {visual_tokens.shape}")
     
     return visual_tokens
