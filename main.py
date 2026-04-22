@@ -83,16 +83,16 @@ def main():
         print("No images generated. Adjust window size or dataset.")
         return
 
-    print("✅ Extracting explicit Candlestick features...")
+    print("Extracting explicit Candlestick features...")
     candlestick_features = extract_candlestick_features(image_paths)
     
-    print("✅ Extracting deep ViT features...")
+    print("Extracting deep ViT features...")
     visual_tokens = extract_vit_features(image_paths)
 
     # ------------------------------------------------------------------
     # Step 5: Extract Temporal Sequence Features (for the TFT model)
     # ------------------------------------------------------------------
-    print("✅ Structuring Historical Sequence Features for TFT...")
+    print("Structuring Historical Sequence Features for TFT...")
     historical_features = []
     
     for i in range(valid_len):
@@ -104,7 +104,7 @@ def main():
     # ------------------------------------------------------------------
     # Step 6: Multi-Modal Fusion and Training
     # ------------------------------------------------------------------
-    print("✅ Combining Multi-Modal Representations...")
+    print("Combining Multi-Modal Representations...")
     
     X_combined = np.concatenate([
         historical_features,   # Processed via TFT context
@@ -112,13 +112,13 @@ def main():
         candlestick_features   # Extracted explicitly
     ], axis=1)
     
-    print(f"🚀 Final Multi-Modal Input Shape: {X_combined.shape}")
-    print(f"🚀 Target Output Shape: {Y_targets.shape}")
+    print(f"Final Multi-Modal Input Shape: {X_combined.shape}")
+    print(f"Target Output Shape: {Y_targets.shape}")
     
-    print("✅ Initializing Multi-Horizon Predictor Model...")
+    print("Initializing Multi-Horizon Predictor Model...")
     model = create_multi_horizon_model(input_dim=X_combined.shape[1], num_horizons=len(horizons))
     
-    print("✅ Commencing TimeSeriesSplit Model Training Phase...")
+    print("Commencing TimeSeriesSplit Model Training Phase...")
     tscv = TimeSeriesSplit(n_splits=5)
     
     for fold, (train_index, val_index) in enumerate(tscv.split(X_combined)):
@@ -135,7 +135,7 @@ def main():
             batch_size=32,
             verbose=1
         )
-    print("🎉 Multi-horizon training walkthrough completed!")
+    print("Multi-horizon training walkthrough completed!")
 
 if __name__ == "__main__":
     main()
