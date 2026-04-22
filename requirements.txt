@@ -1,0 +1,13 @@
+numpy
+pandas
+matplotlib
+seaborn
+mplfinance
+Pillow
+scikit-learn
+tensorflow
+opencv-python
+scikit-image
+torch
+torchvision
+timm
