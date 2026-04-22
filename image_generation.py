@@ -30,7 +30,7 @@ def generate_all_images(df, window_size=5, output_dir='./candlestick_images'):
     """
     Iterates over the dataframe and generates images into the given directory.
     """
-    print(f"✅ Generating candlestick images into {output_dir}")
+    print(f"Generating candlestick images into {output_dir}")
     os.makedirs(output_dir, exist_ok=True)
     
     image_files = []
@@ -41,5 +41,5 @@ def generate_all_images(df, window_size=5, output_dir='./candlestick_images'):
         if img_file:
             image_files.append(img_file)
             
-    print(f"✅ Generated {len(image_files)} candlestick images.")
+    print(f"Generated {len(image_files)} candlestick images.")
     return image_files
